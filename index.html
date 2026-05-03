@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Pr Gilbert Bonkoungou | Chirurgien</title>
+    <title>Pr Gilbert Bonkoungou | Chirurgien Fondateur Clinique Wendtoin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -81,7 +81,7 @@
 
         .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
 
-        /* HERO : PHOTO À GAUCHE (confiance immédiate) */
+        /* HERO : PHOTO À GAUCHE */
         .hero {
             padding: 80px 0 100px;
             background: #fefaf5;
@@ -94,7 +94,6 @@
             align-items: center;
         }
 
-        /* Photo à gauche - premier élément vu par l'oeil */
         .doctor-portrait {
             background: #e8e0d5;
             border-radius: 4px;
@@ -118,7 +117,6 @@
             text-align: center;
         }
 
-        /* Texte à droite */
         .hero-content h4 {
             font-size: 0.8rem;
             letter-spacing: 3px;
@@ -142,6 +140,7 @@
             max-width: 90%;
         }
 
+        /* Boutons : deux styles */
         .btn-primary {
             background: #1a2a3a;
             color: white;
@@ -162,6 +161,35 @@
 
         .btn-primary:hover { background: #b8860b; }
 
+        .btn-outline {
+            background: transparent;
+            color: #1a2a3a;
+            padding: 12px 32px;
+            border-radius: 0;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            border: 1px solid #1a2a3a;
+        }
+
+        .btn-outline:hover {
+            background: #1a2a3a;
+            color: white;
+            border-color: #1a2a3a;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
         /* AUTRES SECTIONS */
         .about { padding: 90px 0; background: white; }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -175,14 +203,45 @@
         .expertise-card i { font-size: 2rem; color: #b8860b; margin-bottom: 16px; }
         .expertise-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 12px; }
 
-        .team { padding: 90px 0; }
+        /* Section Vidéos */
+        .videos { padding: 90px 0; background: white; }
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .video-card {
+            background: #fefaf5;
+            border: 1px solid #eee6dd;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .video-card:hover { transform: translateY(-5px); }
+        .video-thumbnail {
+            background: #e8e0d5;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b8860b;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+        .video-card h4 { padding: 20px 20px 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
+        .video-card p { padding: 0 20px 20px; color: #6a6a6a; font-size: 0.85rem; }
+
+        /* Équipe */
+        .team { padding: 90px 0; background: #fefaf5; }
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 40px; }
-        .team-card { text-align: center; }
-        .team-avatar { width: 100%; background: #f0ebe5; aspect-ratio: 1/1; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 2.5rem; color: #8a7a6a; }
+        .team-card { text-align: center; background: white; padding: 24px; border-radius: 4px; }
+        .team-avatar { width: 100px; height: 100px; background: #e8e0d5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2.5rem; color: #8a7a6a; }
         .team-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 6px; }
         .team-spec { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #b8860b; }
 
-        .contact { background: #fefaf5; padding: 90px 0; }
+        /* Contact */
+        .contact { background: white; padding: 90px 0; }
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .contact-info p { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
         .contact-info i { width: 24px; color: #b8860b; }
@@ -198,7 +257,7 @@
         }
         .contact-form input:focus, .contact-form textarea:focus { outline: none; border-bottom-color: #b8860b; }
 
-        footer { padding: 48px 0; text-align: center; background: white; border-top: 1px solid #f0f0f0; font-size: 0.75rem; color: #8a8a8a; }
+        footer { padding: 48px 0; text-align: center; background: #fefaf5; border-top: 1px solid #f0f0f0; font-size: 0.75rem; color: #8a8a8a; }
 
         @media (max-width: 900px) {
             .hero-grid, .about-grid, .contact-grid, .expertise-grid { grid-template-columns: 1fr; }
@@ -219,6 +278,7 @@
             nav ul.active { display: flex; }
             .hero-content h1 { font-size: 2.5rem; }
             .container { padding: 0 24px; }
+            .button-group { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -232,6 +292,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#a-propos">À propos</a></li>
                 <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#videos">Médias</a></li>
                 <li><a href="#equipe">Équipe</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -240,20 +301,21 @@
     </div>
 </header>
 
-<!-- HERO : PHOTO À GAUCHE, TEXTE À DROITE -->
+<!-- HERO : PHOTO À GAUCHE, TEXTE À DROITE + BOUTON CLINIQUE -->
 <section id="accueil" class="hero">
     <div class="container hero-grid">
-        <!-- GAUCHE : PHOTO DU MÉDECIN (premier élément vu par l'oeil) -->
         <div class="doctor-portrait">
             <img src="https://placehold.co/600x750/e8e0d5/8a7a6a?text=Pr+Gilbert+Bonkoungou&font=playfair" alt="Pr Gilbert Bonkoungou">
-            <div class="portrait-caption">Chirurgie de précision · Ouagadougou</div>
+            <div class="portrait-caption">Chirurgie laparoscopique · Fondateur Clinique Wendtoin</div>
         </div>
-        <!-- DROITE : TEXTE -->
         <div class="hero-content">
             <h4>Chirurgien général & digestif</h4>
             <h1>Pr Gilbert Bonkoungou</h1>
-            <p>Plus de 20 ans d'expérience en chirurgie digestive, oncologique et vasculaire. Une approche précise, humaine et respectueuse de chaque patient.</p>
-            <a href="#contact" class="btn-primary">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
+            <p>Maître de conférences agrégé en chirurgie générale, spécialiste en chirurgie laparoscopique, thoracique et vasculaire. Fondateur de la Clinique Wendtoin à Ouagadougou.</p>
+            <div class="button-group">
+                <a href="#contact" class="btn-primary">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
+                <a href="https://cliniquewendtoin.bf" target="_blank" class="btn-outline"><i class="fas fa-hospital"></i> Visiter Clinique Wendtoin</a>
+            </div>
         </div>
     </div>
 </section>
@@ -263,12 +325,12 @@
     <div class="container about-grid">
         <div class="about-text">
             <h3>La chirurgie comme un art</h3>
-            <p>Professeur Gilbert Bonkoungou, ancien chef de service au CHU de Ouagadougou, consacre sa carrière à la chirurgie générale et digestive. Formé en Europe et au Burkina, il allie rigueur scientifique et écoute attentive.</p>
-            <p>Sa philosophie : chaque patient est unique. La décision chirurgicale se prend ensemble, après un bilan approfondi et une explication claire des bénéfices et des risques.</p>
-            <div class="signature">— Pr G. Bonkoungou</div>
+            <p>Professeur Gilbert Bonkoungou, ancien chef de service au CHU Yalgado Ouédraogo, consacre sa carrière à la chirurgie générale et digestive. Formé en Europe et au Burkina, il est l'un des pionniers de la <strong>chirurgie laparoscopique</strong> au Burkina Faso.</p>
+            <p>Sa philosophie : chaque patient est unique. La décision chirurgicale se prend ensemble, après un bilan approfondi et une explication claire des bénéfices et des risques. Fondateur de la <strong>Clinique Wendtoin</strong>, il y réunit une équipe pluridisciplinaire de haut niveau.</p>
+            <div class="signature">— Pr Gilbert Bonkoungou</div>
         </div>
         <div>
-            <img src="https://placehold.co/500x400/f5efe8/8a7a6a?text=Clinique+moderne" style="width:100%; border-radius:4px;" alt="Clinique">
+            <img src="https://placehold.co/500x400/f5efe8/8a7a6a?text=Clinique+Wendtoin" style="width:100%; border-radius:4px;" alt="Clinique Wendtoin">
         </div>
     </div>
 </section>
@@ -279,9 +341,40 @@
         <h2 class="section-title">Domaines d'expertise</h2>
         <div class="expertise-grid">
             <div class="expertise-card"><i class="fas fa-stomach"></i><h4>Chirurgie digestive</h4><p>Estomac, foie, voies biliaires, pancréas</p></div>
-            <div class="expertise-card"><i class="fas fa-tumor"></i><h4>Chirurgie oncologique</h4><p>Cancers digestifs et généraux</p></div>
+            <div class="expertise-card"><i class="fas fa-microscope"></i><h4>Chirurgie laparoscopique</h4><p>Chirurgie mini-invasive (récupération rapide)</p></div>
             <div class="expertise-card"><i class="fas fa-heartbeat"></i><h4>Chirurgie vasculaire</h4><p>Anévrismes, pontages, veines</p></div>
             <div class="expertise-card"><i class="fas fa-lungs"></i><h4>Chirurgie thoracique</h4><p>Poumon, médiastin, plèvre</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDÉOS : comme sur Dr Rachel Ho, section médias -->
+<section id="videos" class="videos">
+    <div class="container">
+        <h2 class="section-title">Le Pr Bonkoungou en vidéo</h2>
+        <div class="section-subtitle">Découvrez ses interventions et conférences</div>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <h4>La chirurgie laparoscopique au Burkina</h4>
+                <p>Interview : Pr Bonkoungou explique les avantages de la chirurgie mini-invasive.</p>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <h4>Prise en charge des cancers digestifs</h4>
+                <p>Conférence sur l'approche multidisciplinaire au Burkina Faso.</p>
+            </div>
+            <div class="video-card">
+                <div class="video-thumbnail" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <h4>Présentation de la Clinique Wendtoin</h4>
+                <p>Découvrez l'établissement fondé par le Pr Bonkoungou.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -292,12 +385,12 @@
         <h2 class="section-title">L'équipe médicale</h2>
         <div class="section-subtitle">Une approche multidisciplinaire</div>
         <div class="team-grid">
-            <div class="team-card"><div class="team-avatar"><i class="fas fa-user-md"></i></div><h4>Dr Tarhou Lionelle</h4><div class="team-spec">Médecine interne - Diabétologie</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-user-md"></i></div><h4>Dr Tarhou Lionelle</h4><div class="team-spec">Médecine interne</div></div>
             <div class="team-card"><div class="team-avatar"><i class="fas fa-brain"></i></div><h4>Dr Marina Ouédraogo</h4><div class="team-spec">Neurologie</div></div>
             <div class="team-card"><div class="team-avatar"><i class="fas fa-heart"></i></div><h4>Dr Sory Drissa</h4><div class="team-spec">Cardiologie</div></div>
             <div class="team-card"><div class="team-avatar"><i class="fas fa-child"></i></div><h4>Dr Thiombiano A.</h4><div class="team-spec">Pédiatrie</div></div>
             <div class="team-card"><div class="team-avatar"><i class="fas fa-female"></i></div><h4>Dr Dimzoure Said</h4><div class="team-spec">Gynécologie</div></div>
-            <div class="team-card"><div class="team-avatar"><i class="fas fa-microscope"></i></div><h4>Pr G. Bonkoungou</h4><div class="team-spec">Chef de service chirurgie</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-microscope"></i></div><h4>Pr G. Bonkoungou</h4><div class="team-spec">Chef de service</div></div>
         </div>
     </div>
 </section>
@@ -310,7 +403,7 @@
             <div class="contact-info">
                 <p><i class="fas fa-phone-alt"></i> +226 70 00 11 22</p>
                 <p><i class="fas fa-envelope"></i> contact@prbonkoungou.bf</p>
-                <p><i class="fas fa-map-marker-alt"></i> Ouagadougou, Secteur 4, Avenue de la Santé</p>
+                <p><i class="fas fa-map-marker-alt"></i> Clinique Wendtoin, Ouagadougou, Secteur 4</p>
                 <p><i class="fas fa-clock"></i> Lun-Ven 8h–18h | Sam 9h–13h</p>
             </div>
         </div>
@@ -321,7 +414,7 @@
             <select required>
                 <option value="">Motif de consultation</option>
                 <option>Chirurgie digestive</option>
-                <option>Chirurgie oncologique</option>
+                <option>Chirurgie laparoscopique</option>
                 <option>Chirurgie vasculaire</option>
                 <option>Autre spécialité</option>
             </select>
@@ -331,18 +424,29 @@
     </div>
 </section>
 
+<!-- MODAL VIDÉO -->
+<div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center;">
+    <div style="position:relative; width:90%; max-width:800px;">
+        <button onclick="closeVideo()" style="position:absolute; top:-40px; right:0; background:white; border:none; font-size:24px; cursor:pointer; padding:8px 16px;">✕</button>
+        <iframe id="videoIframe" width="100%" height="450px" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 <footer>
     <div class="container">
-        <p>© 2025 Pr Gilbert Bonkoungou — Chirurgie générale & digestive — Conformité CNOM-BF</p>
+        <p>© 2025 Pr Gilbert Bonkoungou — Chirurgien fondateur de la Clinique Wendtoin — Conformité CNOM-BF</p>
     </div>
 </footer>
 
 <script>
+    // Mobile menu
     const mobileBtn = document.getElementById('mobileBtn');
     const navList = document.getElementById('nav-list');
     if(mobileBtn) {
         mobileBtn.addEventListener('click', () => navList.classList.toggle('active'));
     }
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -351,12 +455,31 @@
             navList?.classList.remove('active');
         });
     });
+
+    // Formulaire
     const form = document.getElementById('appointmentForm');
     form?.addEventListener('submit', (e) => {
         e.preventDefault();
         alert("✅ Demande envoyée. Vous serez contacté sous 24h.");
         form.reset();
     });
+
+    // Vidéo modal
+    let currentVideo = '';
+    function playVideo(url) {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = url;
+        modal.style.display = 'flex';
+    }
+    function closeVideo() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+        iframe.src = '';
+        modal.style.display = 'none';
+    }
+    window.playVideo = playVideo;
+    window.closeVideo = closeVideo;
 </script>
 </body>
 </html>
