@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Pr Gilbert Bonkoungou | Chirurgien - Pionnier de la Laparoscopie au Burkina</title>
-    <meta name="description" content="Pr Gilbert Bonkoungou, Maître de Conférences Agrégé en chirurgie générale, pionnier de la chirurgie laparoscopique au Burkina Faso depuis 2005. Expert en chirurgie digestive, thoracique et vasculaire à la Clinique Wendtoin.">
+    <title>Pr Gilbert Bonkoungou | Chirurgien - Clinique Wendtoin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -49,6 +48,7 @@
             margin-bottom: 48px;
         }
 
+        /* HEADER */
         header {
             position: sticky;
             top: 0;
@@ -101,6 +101,7 @@
             cursor: pointer;
         }
 
+        /* HERO - MÊME HAUTEUR POUR PHOTO ET TEXTE */
         .hero {
             padding: 80px 0 100px;
             background: #fefaf5;
@@ -113,6 +114,7 @@
             align-items: stretch;
         }
 
+        /* Colonne photo - hauteur fixe identique au texte */
         .doctor-portrait {
             background: #e8e0d5;
             border-radius: 4px;
@@ -139,6 +141,7 @@
             background: #e8e0d5;
         }
 
+        /* Colonne texte - même hauteur fixe que la photo */
         .hero-content {
             display: flex;
             flex-direction: column;
@@ -169,26 +172,7 @@
             max-width: 90%;
         }
 
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .badge {
-            background: #1a2a3a;
-            color: white;
-            padding: 6px 14px;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .badge-gold {
-            background: #b8860b;
-        }
-
+        /* BOUTONS EN LIGNE (ROW) SUR DESKTOP */
         .button-group {
             display: flex;
             flex-direction: row;
@@ -242,6 +226,7 @@
             border-color: #1a2a3a;
         }
 
+        /* AUTRES SECTIONS */
         .about {
             padding: 90px 0;
             background: white;
@@ -264,13 +249,6 @@
             margin-bottom: 20px;
             color: #4a4a4a;
             line-height: 1.7;
-        }
-
-        .about-highlight {
-            background: #fefaf5;
-            padding: 20px;
-            border-left: 4px solid #b8860b;
-            margin: 24px 0;
         }
 
         .signature {
@@ -317,108 +295,9 @@
             margin-bottom: 12px;
         }
 
-        .expertise-card p {
-            font-size: 0.85rem;
-            color: #6a6a6a;
-        }
-
-        .parcours {
-            padding: 90px 0;
-            background: white;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 24px;
-            padding: 20px;
-            background: #fefaf5;
-            border-left: 4px solid #b8860b;
-        }
-
-        .timeline-year {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #b8860b;
-            min-width: 100px;
-        }
-
-        .timeline-content h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            color: #6a6a6a;
-            font-size: 0.9rem;
-        }
-
-        .distinctions {
-            background: #fefaf5;
-            padding: 90px 0;
-        }
-
-        .distinctions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .distinction-card {
-            background: white;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid #eee6dd;
-        }
-
-        .distinction-card i {
-            font-size: 2.5rem;
-            color: #b8860b;
-            margin-bottom: 16px;
-        }
-
-        .distinction-card h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .hopitaux {
-            padding: 90px 0;
-            background: white;
-        }
-
-        .hopitaux-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .hopital-card {
-            background: #fefaf5;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid #eee6dd;
-        }
-
-        .hopital-card i {
-            font-size: 2rem;
-            color: #b8860b;
-            margin-bottom: 16px;
-        }
-
         .videos {
             padding: 90px 0;
-            background: #fefaf5;
+            background: white;
         }
 
         .videos-grid {
@@ -429,12 +308,15 @@
         }
 
         .video-card {
-            background: white;
+            background: #fefaf5;
             border: 1px solid #eee6dd;
             border-radius: 4px;
             overflow: hidden;
             cursor: pointer;
             transition: 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .video-card:hover {
@@ -442,7 +324,7 @@
         }
 
         .video-thumbnail {
-            background: #1a2a3a;
+            background: #e8e0d5;
             aspect-ratio: 16/9;
             display: flex;
             align-items: center;
@@ -463,8 +345,60 @@
             font-size: 0.85rem;
         }
 
-        .contact {
+        .article-link {
+            font-size: 0.7rem;
+            color: #b8860b;
+            padding: 0 20px 20px;
+            display: block;
+        }
+
+        .team {
+            padding: 90px 0;
             background: #fefaf5;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            text-align: center;
+            background: white;
+            padding: 24px;
+            border-radius: 4px;
+        }
+
+        .team-avatar {
+            width: 90px;
+            height: 90px;
+            background: #e8e0d5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: #8a7a6a;
+        }
+
+        .team-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+        }
+
+        .team-spec {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b8860b;
+            margin-top: 6px;
+        }
+
+        .contact {
+            background: white;
             padding: 90px 0;
         }
 
@@ -508,27 +442,23 @@
         footer {
             padding: 48px 0;
             text-align: center;
-            background: #1a2a3a;
-            color: #cbd5e1;
+            background: #fefaf5;
+            border-top: 1px solid #f0f0f0;
             font-size: 0.75rem;
+            color: #8a8a8a;
         }
 
-        footer a {
-            color: #b8860b;
-            text-decoration: none;
-        }
-
+        /* RESPONSIVE MOBILE */
         @media (max-width: 900px) {
             .hero-grid,
             .about-grid,
             .contact-grid,
             .expertise-grid,
-            .videos-grid,
-            .distinctions-grid,
-            .hopitaux-grid {
+            .videos-grid {
                 grid-template-columns: 1fr;
             }
 
+            /* Sur mobile : on supprime la hauteur fixe et les boutons passent en colonne */
             .doctor-portrait,
             .hero-content {
                 height: auto;
@@ -574,11 +504,6 @@
             .container {
                 padding: 0 24px;
             }
-
-            .timeline-item {
-                flex-direction: column;
-                gap: 8px;
-            }
         }
     </style>
 </head>
@@ -593,10 +518,9 @@
             <ul id="nav-list">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#a-propos">À propos</a></li>
-                <li><a href="#parcours">Parcours</a></li>
                 <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#distinctions">Distinctions</a></li>
                 <li><a href="#videos">Médias</a></li>
+                <li><a href="#equipe">Équipe</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu" id="mobileBtn">
@@ -606,38 +530,31 @@
     </div>
 </header>
 
+<!-- HERO : PHOTO ET TEXTE À LA MÊME HAUTEUR (580px) + BOUTONS EN LIGNE -->
 <section id="accueil" class="hero">
     <div class="container hero-grid">
         <div class="doctor-portrait">
             <img src="https://placehold.co/600x580/e8e0d5/8a7a6a?text=Pr+Gilbert+Bonkoungou&font=playfair" alt="Pr Gilbert Bonkoungou">
-            <div class="portrait-caption">Maître de Conférences Agrégé · Pionnier de la Laparoscopie au Burkina</div>
+            <div class="portrait-caption">Chirurgien · Fondateur Clinique Wendtoin</div>
         </div>
         <div class="hero-content">
-            <h4>Maître de Conférences Agrégé · CAMES</h4>
+            <h4>Chirurgien général & digestif</h4>
             <h1>Pr Gilbert Bonkoungou</h1>
-            <p>Chirurgien général, digestif, thoracique et vasculaire. Pionnier de la <strong>chirurgie laparoscopique au Burkina Faso depuis 2005</strong>. Fondateur de la Clinique Wendtoin à Ouagadougou.</p>
-            <div class="badges">
-                <span class="badge badge-gold">CAMES 2014</span>
-                <span class="badge">Laparoscopie pionnier</span>
-                <span class="badge">40+ spécialistes</span>
-            </div>
+            <p>Maître de conférences agrégé, spécialiste en chirurgie laparoscopique, thoracique et vasculaire. Fondateur de la Clinique Wendtoin à Ouagadougou.</p>
             <div class="button-group">
                 <a href="#contact" class="btn-primary">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
-                <a href="#" class="btn-outline" id="wendtoinBtn"><i class="fas fa-hospital"></i> Clinique Wendtoin</a>
+                <a href="#" class="btn-outline" id="wendtoinBtn"><i class="fas fa-hospital"></i> Visiter Clinique Wendtoin</a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- À PROPOS -->
 <section id="a-propos" class="about">
     <div class="container about-grid">
         <div class="about-text">
             <h3>La chirurgie comme un art</h3>
-            <p><strong>Professeur Gilbert Bonkoungou</strong> est <strong>Maître de Conférences Agrégé en chirurgie générale</strong> à l'Université Joseph Ki-Zerbo de Ouagadougou. Il a été admis au concours d'agrégation du <strong>CAMES en novembre 2014 à Yaoundé, Cameroun</strong>.</p>
-            <p>Formé en Europe et au Burkina, il est <strong>l'un des pionniers de la chirurgie laparoscopique au Burkina Faso depuis 2005</strong>, une technique mini-invasive qui permet une récupération plus rapide pour les patients.</p>
-            <div class="about-highlight">
-                <p><strong>🔪 Spécialités :</strong> Chirurgie générale et digestive, Chirurgie laparoscopique, Chirurgie thoracique et vasculaire</p>
-            </div>
+            <p>Professeur Gilbert Bonkoungou, ancien chef de service au CHU Yalgado Ouédraogo, consacre sa carrière à la chirurgie générale et digestive. Formé en Europe et au Burkina, il est l'un des pionniers de la <strong>chirurgie laparoscopique</strong> au Burkina Faso.</p>
             <p>Sa philosophie : chaque patient est unique. La décision chirurgicale se prend ensemble, après un bilan approfondi et une explication claire des bénéfices et des risques. Fondateur de la <strong>Clinique Wendtoin</strong>, il y réunit une équipe pluridisciplinaire de haut niveau.</p>
             <div class="signature">— Pr Gilbert Bonkoungou</div>
         </div>
@@ -647,108 +564,79 @@
     </div>
 </section>
 
-<section id="parcours" class="parcours">
-    <div class="container">
-        <h2 class="section-title">Parcours hospitalier</h2>
-        <div class="section-subtitle">Une carrière au service des patients</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-year">CHU Yalgado Ouédraogo</div>
-                <div class="timeline-content">
-                    <h4>Chef de service - Chirurgie</h4>
-                    <p>Responsable du service de chirurgie générale et digestive</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">CHU Blaise Compaoré</div>
-                <div class="timeline-content">
-                    <h4>Chirurgien Senior</h4>
-                    <p>Prise en charge des patients en chirurgie thoracique et vasculaire</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">Clinique Wendtoin</div>
-                <div class="timeline-content">
-                    <h4>Fondateur & Chirurgien</h4>
-                    <p>Création de la Clinique Wendtoin, établissement privé de référence à Ouagadougou</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+<!-- EXPERTISE -->
 <section id="expertise" class="expertise">
     <div class="container">
         <h2 class="section-title">Domaines d'expertise</h2>
-        <div class="section-subtitle">Chirurgie générale et spécialisée</div>
         <div class="expertise-grid">
-            <div class="expertise-card"><i class="fas fa-stomach"></i><h4>Chirurgie digestive</h4><p>Estomac, foie, voies biliaires, pancréas, intestins</p></div>
-            <div class="expertise-card"><i class="fas fa-microscope"></i><h4>Chirurgie laparoscopique</h4><p>Mini-invasive · Récupération rapide · Pionnier depuis 2005</p></div>
-            <div class="expertise-card"><i class="fas fa-heartbeat"></i><h4>Chirurgie vasculaire</h4><p>Anévrismes, pontages, maladies veineuses</p></div>
-            <div class="expertise-card"><i class="fas fa-lungs"></i><h4>Chirurgie thoracique</h4><p>Poumon, médiastin, plèvre, tumeurs thoraciques</p></div>
+            <div class="expertise-card"><i class="fas fa-stomach"></i><h4>Chirurgie digestive</h4><p>Estomac, foie, voies biliaires, pancréas</p></div>
+            <div class="expertise-card"><i class="fas fa-microscope"></i><h4>Chirurgie laparoscopique</h4><p>Mini-invasive · récupération rapide</p></div>
+            <div class="expertise-card"><i class="fas fa-heartbeat"></i><h4>Chirurgie vasculaire</h4><p>Anévrismes, pontages, veines</p></div>
+            <div class="expertise-card"><i class="fas fa-lungs"></i><h4>Chirurgie thoracique</h4><p>Poumon, médiastin, plèvre</p></div>
         </div>
     </div>
 </section>
 
-<section id="distinctions" class="distinctions">
-    <div class="container">
-        <h2 class="section-title">Distinctions & Reconnaissances</h2>
-        <div class="section-subtitle">Un parcours d'excellence</div>
-        <div class="distinctions-grid">
-            <div class="distinction-card"><i class="fas fa-medal"></i><h4>Agrégation du CAMES</h4><p>Admis au concours d'agrégation du CAMES en novembre 2014 à Yaoundé, Cameroun</p></div>
-            <div class="distinction-card"><i class="fas fa-award"></i><h4>Pionnier de la Laparoscopie</h4><p>Premières interventions chirurgicales vidéo-assistées réalisées en 2005</p></div>
-            <div class="distinction-card"><i class="fas fa-chalkboard-user"></i><h4>Maître de Conférences</h4><p>Enseignant à l'Université Joseph Ki-Zerbo de Ouagadougou</p></div>
-        </div>
-    </div>
-</section>
-
-<section class="hopitaux">
-    <div class="container">
-        <h2 class="section-title">Lieux d'exercice</h2>
-        <div class="section-subtitle">Une expertise reconnue dans plusieurs établissements</div>
-        <div class="hopitaux-grid">
-            <div class="hopital-card"><i class="fas fa-hospital"></i><h4>CHU Yalgado Ouédraogo</h4><p>Ouagadougou</p></div>
-            <div class="hopital-card"><i class="fas fa-hospital"></i><h4>CHU Blaise Compaoré</h4><p>Ouagadougou</p></div>
-            <div class="hopital-card"><i class="fas fa-clinic-medical"></i><h4>Clinique Wendtoin</h4><p>Fondateur & Chirurgien</p></div>
-        </div>
-    </div>
-</section>
-
+<!-- MÉDIAS : VIDÉOS + ARTICLE DE PRESSE -->
 <section id="videos" class="videos">
     <div class="container">
-        <h2 class="section-title">Le Pr Bonkoungou en vidéo</h2>
-        <div class="section-subtitle">Découvrez ses interventions et conférences</div>
+        <h2 class="section-title">Le Pr Bonkoungou dans les médias</h2>
+        <div class="section-subtitle">Interviews, conférences et articles de presse</div>
         <div class="videos-grid">
+            
+            <!-- Carte 1 : Vidéo 1 -->
             <div class="video-card" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
                 <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
                 <h4>La chirurgie laparoscopique au Burkina</h4>
-                <p>Interview : les avantages de la chirurgie mini-invasive, pionnier depuis 2005.</p>
+                <p>Interview : les avantages de la chirurgie mini-invasive.</p>
             </div>
+            
+            <!-- Carte 2 : Vidéo 2 -->
             <div class="video-card" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
                 <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
                 <h4>Prise en charge des cancers digestifs</h4>
-                <p>Conférence sur l'approche multidisciplinaire au Burkina Faso.</p>
+                <p>Conférence sur l'approche multidisciplinaire.</p>
             </div>
-            <div class="video-card" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
-                <h4>Présentation de la Clinique Wendtoin</h4>
-                <p>Découvrez l'établissement fondé par le Pr Bonkoungou.</p>
-            </div>
+            
+            <!-- Carte 3 : ARTICLE DE PRESSE (Lefaso.net) -->
+            <a href="https://lefaso.net/spip.php?article143733" target="_blank" rel="noopener noreferrer" class="video-card" style="text-decoration: none; color: inherit;">
+                <div class="video-thumbnail" style="background: #1a2a3a;">
+                    <i class="fas fa-newspaper" style="color: white; font-size: 2.5rem;"></i>
+                </div>
+                <h4>Interview : Chirurgie laparoscopique</h4>
+                <p>« Ce n'est pas une technique futuriste, c'est l'actualité »</p>
+                <span class="article-link">📰 Lire l'article sur Lefaso.net →</span>
+            </a>
         </div>
     </div>
 </section>
 
+<!-- ÉQUIPE -->
+<section id="equipe" class="team">
+    <div class="container">
+        <h2 class="section-title">L'équipe médicale</h2>
+        <div class="section-subtitle">Une approche multidisciplinaire</div>
+        <div class="team-grid">
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-user-md"></i></div><h4>Dr Tarhou Lionelle</h4><div class="team-spec">Médecine interne</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-brain"></i></div><h4>Dr Marina Ouédraogo</h4><div class="team-spec">Neurologie</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-heart"></i></div><h4>Dr Sory Drissa</h4><div class="team-spec">Cardiologie</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-child"></i></div><h4>Dr Thiombiano A.</h4><div class="team-spec">Pédiatrie</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-female"></i></div><h4>Dr Dimzoure Said</h4><div class="team-spec">Gynécologie</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-microscope"></i></div><h4>Pr G. Bonkoungou</h4><div class="team-spec">Chirurgie</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="contact">
     <div class="container contact-grid">
         <div>
             <h2 class="section-title" style="margin-bottom: 24px;">Consultation</h2>
             <div class="contact-info">
-                <p><i class="fas fa-phone-alt"></i> +226 51 00 06 47 (Urgences 24/24)</p>
-                <p><i class="fas fa-phone"></i> +226 78 36 56 57 (Standard)</p>
-                <p><i class="fab fa-whatsapp"></i> +226 51 00 06 47 (WhatsApp)</p>
-                <p><i class="fas fa-envelope"></i> clinwend@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Boulevard des Tensoba, Secteur n°25<br>Cissin, Ouagadougou, Burkina Faso</p>
-                <p><i class="fas fa-clock"></i> Consultations : Lun-Ven 7h30–19h30 | Sam 7h30–12h<br>🚨 Urgences 24h/24 - 7j/7</p>
+                <p><i class="fas fa-phone-alt"></i> +226 70 00 11 22</p>
+                <p><i class="fas fa-envelope"></i> contact@prbonkoungou.bf</p>
+                <p><i class="fas fa-map-marker-alt"></i> Clinique Wendtoin, Ouagadougou, Secteur 4</p>
+                <p><i class="fas fa-clock"></i> Lun-Ven 8h–18h | Sam 9h–13h</p>
             </div>
         </div>
         <form id="appointmentForm" class="contact-form">
@@ -760,23 +648,21 @@
                 <option>Chirurgie digestive</option>
                 <option>Chirurgie laparoscopique</option>
                 <option>Chirurgie vasculaire</option>
-                <option>Chirurgie thoracique</option>
-                <option>Consultation générale</option>
                 <option>Autre</option>
             </select>
             <textarea rows="3" placeholder="Votre message..."></textarea>
-            <button type="submit" class="btn-primary" style="background:#b8860b;">Envoyer la demande <i class="fas fa-paper-plane"></i></button>
+            <button type="submit" class="btn-primary" style="background:#b8860b;">Envoyer la demande</button>
         </form>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <p>© 2025 Pr Gilbert Bonkoungou — Maître de Conférences Agrégé — Pionnier de la Laparoscopie au Burkina Faso (depuis 2005) — Fondateur de la Clinique Wendtoin</p>
-        <p style="margin-top: 12px;"><a href="#accueil">Retour en haut</a> | <a href="https://wa.me/22651000647">WhatsApp Urgences 24/24</a></p>
+        <p>© 2025 Pr Gilbert Bonkoungou — Fondateur de la Clinique Wendtoin — Conformité CNOM-BF</p>
     </div>
 </footer>
 
+<!-- MODAL VIDÉO -->
 <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center;">
     <div style="position:relative; width:90%; max-width:800px;">
         <button onclick="closeVideo()" style="position:absolute; top:-40px; right:0; background:white; border:none; font-size:24px; cursor:pointer; padding:8px 16px;">✕</button>
@@ -804,7 +690,7 @@
     if (wendtoinBtn) {
         wendtoinBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            window.location.href = 'index.html';
+            alert("🔗 Lien vers le site de la Clinique Wendtoin\n(à remplacer par l'URL réelle)");
         });
     }
 
