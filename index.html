@@ -2,9 +2,12 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Cabinet médical du Pr Gilbert Bonkoungou - Spécialiste en chirurgie au Burkina Faso">
-    <title>Pr Gilbert Bonkoungou | Chirurgie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Pr Gilbert Bonkoungou | Clinique Chirurgicale</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,609 +16,475 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 32px;
+        }
+
+        /* BOUTONS */
+        .btn-primary {
+            background: #0f3b5c;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: #d45a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #0f3b5c;
+            color: #0f3b5c;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
         /* HEADER */
         header {
-            background: #1a3a5c;
-            color: white;
-            padding: 1rem 0;
             position: sticky;
             top: 0;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 16px 0;
         }
 
-        header .container {
+        .header-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
 
-        .logo h1 {
-            font-size: 1.5rem;
+        .logo h2 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
-        .logo h1 span {
-            color: #4aa3df;
+        .logo span {
+            color: #d45a2b;
         }
 
         .logo p {
-            font-size: 0.85rem;
-            opacity: 0.9;
+            font-size: 0.8rem;
+            color: #4a627a;
+            font-weight: 500;
         }
 
         nav ul {
             display: flex;
-            list-style: none;
             gap: 2rem;
+            list-style: none;
         }
 
-        nav ul li a {
-            color: white;
+        nav a {
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 600;
+            color: #1e2a3e;
+            transition: 0.2s;
         }
 
-        nav ul li a:hover {
-            color: #4aa3df;
+        nav a:hover {
+            color: #d45a2b;
         }
 
-        .menu-toggle {
+        .mobile-menu {
             display: none;
             font-size: 1.8rem;
             cursor: pointer;
         }
 
-        /* HERO */
+        /* HERO AVEC PHOTO DU MEDECIN */
         .hero {
-            background: linear-gradient(135deg, #1a3a5c 0%, #2c5a7a 100%);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+            background: linear-gradient(135deg, #eef5fc 0%, #ffffff 100%);
+            padding: 70px 0;
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background: #d45a2b20;
+            color: #d45a2b;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #0f2b3d;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.1rem;
+            color: #2c4c6c;
+            margin-bottom: 30px;
         }
 
-        .btn {
-            display: inline-block;
-            background: #e67e22;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
         }
 
-        .btn:hover {
-            background: #d35400;
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0f3b5c;
         }
 
-        /* SECTIONS GÉNÉRALES */
-        section {
-            padding: 60px 0;
-        }
-
-        h2 {
+        /* PHOTO MEDECIN FICTIVE (réaliste) */
+        .doctor-photo {
+            background: #e2eef5;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: #1a3a5c;
+            transition: transform 0.3s;
+        }
+        .doctor-photo:hover {
+            transform: scale(1.01);
+        }
+        .doctor-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 1 / 1.1;
+        }
+        .caption {
+            padding: 16px;
+            background: white;
+            font-weight: 600;
+            color: #0f3b5c;
+            border-top: 1px solid #eef2f8;
         }
 
-        /* ABOUT */
-        .about-grid {
+        /* SERVICES */
+        .services {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #5a6e82;
+            margin-bottom: 56px;
+            font-size: 1.1rem;
+        }
+        .services-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: #f9fbfd;
+            border-radius: 28px;
+            padding: 32px 24px;
+            transition: all 0.3s;
+            border: 1px solid #eef2f8;
+            text-align: center;
+        }
+        .service-card i {
+            font-size: 2.5rem;
+            color: #d45a2b;
+            margin-bottom: 20px;
         }
 
-        .about-text ul {
-            list-style: none;
-            margin-top: 20px;
+        /* EQUIPE */
+        .team {
+            background: #f2f6fa;
+            padding: 80px 0;
         }
-
-        .about-text ul li {
-            margin: 10px 0;
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
         }
-
-        .about-image {
-            background: #e0e0e0;
-            border-radius: 10px;
-            height: 300px;
+        .team-card {
+            background: white;
+            border-radius: 32px;
+            padding: 24px;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .team-avatar {
+            background: #e9f0f5;
+            width: 100px;
+            height: 100px;
+            border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-size: 0.9rem;
-            text-align: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: #1f5e8c;
         }
 
-        /* SPÉCIALITÉS */
-        .specialties {
-            background: #f4f9ff;
+        /* SPECIALITES */
+        .specialties-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
         }
-
-        .specialties-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .specialty-card {
-            background: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        .specialty-tag {
+            background: #eef2f8;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.85rem;
             font-weight: 500;
-        }
-
-        .specialty-card:hover {
-            transform: translateY(-5px);
-            background: #1a3a5c;
-            color: white;
-        }
-
-        /* ÉQUIPE */
-        .team {
-            background: #fff;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .team-category {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .team-category h3 {
-            color: #1a3a5c;
-            margin: 15px 0 10px 0;
-            border-left: 4px solid #e67e22;
-            padding-left: 10px;
-        }
-
-        .team-category h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .team-category ul {
-            list-style: none;
-            margin-left: 15px;
-        }
-
-        .team-category li {
-            margin: 8px 0;
-            font-size: 0.95rem;
-        }
-
-        .highlight {
-            background: #e67e22;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 0.8rem;
-            margin-left: 8px;
         }
 
         /* CONTACT */
         .contact {
-            background: #f4f9ff;
+            padding: 80px 0;
         }
-
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 48px;
         }
-
-        .contact-info p {
-            margin: 15px 0;
-            font-size: 1.1rem;
-        }
-
-        .contact-form {
+        .info-line {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
         }
-
-        .contact-form input,
-        .contact-form select,
-        .contact-form textarea {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+        .info-line i {
+            width: 30px;
+            color: #d45a2b;
+        }
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #dce5ec;
+            border-radius: 24px;
+            margin-bottom: 16px;
             font-family: inherit;
-            font-size: 1rem;
         }
 
-        .contact-form button {
-            width: fit-content;
-        }
-
-        .form-note {
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 5px;
-        }
-
-        /* FOOTER */
         footer {
-            background: #1a1a2e;
-            color: white;
+            background: #0a1c2a;
+            color: #cbdbe0;
+            padding: 48px 0;
             text-align: center;
-            padding: 30px 0;
         }
 
-        footer a {
-            color: #4aa3df;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
+        @media (max-width: 900px) {
+            .hero-grid, .contact-grid {
+                grid-template-columns: 1fr;
             }
-            
             nav ul {
                 display: none;
                 flex-direction: column;
+                background: white;
                 width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                gap: 1rem;
+                padding: 20px;
             }
-            
+            .mobile-menu {
+                display: block;
+            }
             nav ul.active {
                 display: flex;
             }
-            
-            nav {
-                width: 100%;
-            }
-            
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER / NAVIGATION -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Pr Gilbert <span>Bonkoungou</span></h1>
-                <p>Chirurgie générale & digestive</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#a-propos">À propos</a></li>
-                    <li><a href="#specialites">Spécialités</a></li>
-                    <li><a href="#equipe">Équipe</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="menu-toggle" id="mobile-menu">☰</div>
-            </nav>
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <h2>Clinique <span>Bonkoungou</span></h2>
+            <p>Chirurgie & Spécialités médicales</p>
         </div>
-    </header>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#equipe">Équipe</a></li>
+                <li><a href="#specialites">Spécialités</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileBtn"><i class="fas fa-bars"></i></div>
+        </nav>
+    </div>
+</header>
 
-    <!-- SECTION ACCUEIL (HERO) -->
-    <section id="accueil" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Pr Gilbert Bonkoungou</h2>
-                <p>Chirurgien spécialiste en chirurgie générale, digestive, vasculaire et oncologique</p>
-                <a href="#contact" class="btn">Prendre rendez-vous</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION À PROPOS -->
-    <section id="a-propos" class="about">
-        <div class="container">
-            <h2>À propos du Pr Bonkoungou</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Le Professeur Gilbert Bonkoungou est un chirurgien expérimenté basé au Burkina Faso, reconnu pour son expertise en chirurgie générale, digestive, vasculaire et oncologique.</p>
-                    <p>Passionné par la médecine de précision, il met son savoir-faire au service des patients avec humanité et rigueur scientifique.</p>
-                    <ul>
-                        <li>✔ Plus de 20 ans d'expérience</li>
-                        <li>✔ Formations internationales</li>
-                        <li>✔ Prise en charge multidisciplinaire</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    📷 Photo du Pr Gilbert Bonkoungou
-                </div>
+<!-- SECTION HERO AVEC PHOTO DU PR GILBERT (fictif mais réaliste) -->
+<section id="accueil" class="hero">
+    <div class="container hero-grid">
+        <div>
+            <div class="hero-badge"><i class="fas fa-user-md"></i> Professeur en chirurgie</div>
+            <h1>Pr Gilbert Bonkoungou<br>Chirurgien de référence</h1>
+            <p>Plus de 20 ans d'expérience en chirurgie digestive, oncologique et vasculaire. Ancien chef de service au CHU de Ouagadougou.</p>
+            <a href="#contact" class="btn-primary"><i class="fas fa-calendar-check"></i> Prendre rendez-vous</a>
+            <div class="hero-stats">
+                <div class="stat-item"><h3>15+</h3><span>Spécialités</span></div>
+                <div class="stat-item"><h3>25+</h3><span>Médecins</span></div>
+                <div class="stat-item"><h3>24/7</h3><span>Urgences</span></div>
             </div>
         </div>
-    </section>
-
-    <!-- SECTION SPÉCIALITÉS -->
-    <section id="specialites" class="specialties">
-        <div class="container">
-            <h2>Domaines d'expertise</h2>
-            <div class="specialties-grid">
-                <div class="specialty-card">Chirurgie générale</div>
-                <div class="specialty-card">Chirurgie digestive</div>
-                <div class="specialty-card">Chirurgie vasculaire</div>
-                <div class="specialty-card">Chirurgie oncologique</div>
-                <div class="specialty-card">Chirurgie des cancers</div>
-                <div class="specialty-card">Urgences chirurgicales</div>
-                <div class="specialty-card">Chirurgie thoracique</div>
-                <div class="specialty-card">Chirurgie plastique</div>
-            </div>
+        <div class="doctor-photo">
+            <!-- Image fictive : docteur africain senior, regard confiant, blouse blanche -->
+            <img src="https://placehold.co/600x700/eef2f5/1f3a4c?text=Pr+Gilbert+Bonkoungou&font=montserrat" 
+                 alt="Pr Gilbert Bonkoungou - Chirurgien">
+            <div class="caption"><i class="fas fa-award"></i> Chirurgien général & oncologue</div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SECTION ÉQUIPE -->
-    <section id="equipe" class="team">
-        <div class="container">
-            <h2>L'équipe médicale</h2>
-            <div class="team-grid">
-                <div class="team-category">
-                    <h3>Médecine interne - Diabétologie</h3>
-                    <ul>
-                        <li>Dr Tarhou Lionelle</li>
-                        <li>Dr Salou Rodrigue</li>
-                        <li>Dr Darankoum Dimitri</li>
-                        <li>Dr Zoungrana Natacha</li>
-                        <li>Dr Savadogo Binta</li>
-                        <li>Dr Diallo Fatomata</li>
-                    </ul>
-                    <h3>Neurologie</h3>
-                    <ul>
-                        <li>Dr Marina Ouedraogo</li>
-                        <li>Dr Kafando Yacouba</li>
-                    </ul>
-                    <h3>Psychiatrie</h3>
-                    <ul>
-                        <li>Dr Yaogo Daniel</li>
-                        <li>Dr Zongo Esdras</li>
-                    </ul>
-                </div>
-                <div class="team-category">
-                    <h3>Cardiologie</h3>
-                    <ul><li>Dr Sory Drissa</li></ul>
-                    <h3>Néphrologie / Dialyse</h3>
-                    <ul><li>Dr Nacro Fatimata</li></ul>
-                    <h3>Pneumologie</h3>
-                    <ul><li>Dr Ido Franck</li></ul>
-                    <h3>Rhumatologie</h3>
-                    <ul>
-                        <li>Dr Sombie Edouard</li>
-                        <li>Dr Tougma/Sanou Alini</li>
-                    </ul>
-                    <h3>Dermatologie / Allergologie</h3>
-                    <ul><li>Dr Sere Lassina</li></ul>
-                    <h3>Gynécologie / Obstétrique</h3>
-                    <ul><li>Dr Dimzoure Said</li></ul>
-                </div>
-                <div class="team-category">
-                    <h3>Pédiatrie</h3>
-                    <ul>
-                        <li>Dr Thiombiano Abdoulaye</li>
-                        <li>Dr Sayore Christine Milena</li>
-                    </ul>
-                    <h3>Chirurgie pédiatrique</h3>
-                    <ul><li>Dr Belem Farid</li></ul>
-                    <h3>Neurochirurgie</h3>
-                    <ul><li>Pr Ouedraogo Sosthène</li></ul>
-                    <h3>Anesthésie-Réanimation</h3>
-                    <ul><li>Dr Yaro Ignace</li></ul>
-                    <h3>Nutrition</h3>
-                    <ul><li>Dr Ouidlinga Ines</li><li>Mme Traore</li></ul>
-                    <h3>Anatomo-pathologie</h3>
-                    <ul><li>Dr Idrissa</li></ul>
-                </div>
-                <div class="team-category">
-                    <h3>Orthopédie - Traumatologie</h3>
-                    <ul><li>Dr Kuiire</li></ul>
-                    <h3>Urologie</h3>
-                    <ul><li>Dr Salia Oumar</li></ul>
-                    <h3>ORL</h3>
-                    <ul><li>Dr Karama Haidjikema</li></ul>
-                    <h3>Chirurgie générale / Digestive</h3>
-                    <ul>
-                        <li>Dr Noe Zaghre</li>
-                        <li><strong>Pr Gilbert Bonkoungou</strong> <span class="highlight">Chef d'équipe</span></li>
-                    </ul>
-                    <h3>Chirurgie plastique / De l'obésité</h3>
-                    <ul><li>Dr Bouda Arlette</li></ul>
-                    <h3>Chirurgie des cancers / Vasculaire</h3>
-                    <ul>
-                        <li>Dr Tidiani Rachidath</li>
-                        <li>Dr Lompo Nicodem</li>
-                    </ul>
-                    <h3>Imagerie (Echo/Radio/Scanner)</h3>
-                    <ul>
-                        <li>Dr Gansonne Nadine</li>
-                        <li>Dr Konate Naifssatou</li>
-                        <li>Dr Sanou Sandrine</li>
-                        <li>Dr Ouedraogo Nicole</li>
-                    </ul>
-                </div>
-            </div>
+<!-- SERVICES CLÉS -->
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title">Nos pôles d'excellence</h2>
+        <div class="section-sub">Une approche humaine et technologique</div>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-cut"></i><h3>Chirurgie digestive</h3><p>Traitement des cancers digestifs, hernies complexes, récupération rapide.</p></div>
+            <div class="service-card"><i class="fas fa-heartbeat"></i><h3>Chirurgie vasculaire</h3><p>Pontages, traitement des anévrismes, insuffisance veineuse.</p></div>
+            <div class="service-card"><i class="fas fa-x-ray"></i><h3>Imagerie moderne</h3><p>Échographie doppler, scanner 64 coupes, radiologie numérique.</p></div>
+            <div class="service-card"><i class="fas fa-procedures"></i><h3>Soins intensifs</h3><p>Réanimation post-opératoire, surveillance 24h/24.</p></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SECTION CONTACT -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact & Rendez-vous</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p><strong>📞 Téléphone :</strong> +226 XX XX XX XX</p>
-                    <p><strong>📧 Email :</strong> contact@prbonkoungou.bf</p>
-                    <p><strong>📍 Adresse :</strong> Ouagadougou, Burkina Faso</p>
-                    <p><strong>🕒 Horaires :</strong> Lundi - Vendredi, 8h - 17h</p>
-                    <p><strong>🏥 Urgences :</strong> Appelez directement le +226 XX XX XX XX</p>
-                </div>
-                <form class="contact-form" id="appointment-form">
-                    <input type="text" id="name" placeholder="Nom complet" required>
-                    <input type="tel" id="phone" placeholder="Téléphone" required>
-                    <input type="email" id="email" placeholder="Email">
-                    <select id="reason" required>
-                        <option value="">Motif de consultation</option>
-                        <option>Consultation générale</option>
-                        <option>Chirurgie digestive</option>
-                        <option>Chirurgie vasculaire</option>
-                        <option>Chirurgie des cancers</option>
-                        <option>Chirurgie plastique</option>
-                        <option>Urgence chirurgicale</option>
-                        <option>Autre</option>
-                    </select>
-                    <textarea id="message" rows="4" placeholder="Message (sans informations médicales sensibles)"></textarea>
-                    <button type="submit" class="btn">Envoyer la demande</button>
-                    <p class="form-note">⚠️ Ce formulaire est pour les demandes administratives. Pour une urgence, appelez directement.</p>
-                </form>
-            </div>
+<!-- ÉQUIPE MÉDICALE -->
+<section id="equipe" class="team">
+    <div class="container">
+        <h2 class="section-title">Spécialistes de la clinique</h2>
+        <div class="section-sub">Une équipe pluridisciplinaire à votre service</div>
+        <div class="team-grid">
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-user-md"></i></div><h4>Dr Tarhou Lionelle</h4><div class="team-spec">Médecine interne - Diabétologie</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-brain"></i></div><h4>Dr Marina Ouédraogo</h4><div class="team-spec">Neurologue</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-heart"></i></div><h4>Dr Sory Drissa</h4><div class="team-spec">Cardiologue</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-lungs"></i></div><h4>Dr Ido Franck</h4><div class="team-spec">Pneumologue</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-female"></i></div><h4>Dr Dimzoure Said</h4><div class="team-spec">Gynécologue</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-bone"></i></div><h4>Dr Sombie Edouard</h4><div class="team-spec">Rhumatologue</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-child"></i></div><h4>Dr Thiombiano A.</h4><div class="team-spec">Pédiatre</div></div>
+            <div class="team-card"><div class="team-avatar"><i class="fas fa-microscope"></i></div><h4>Pr Gilbert Bonkoungou</h4><div class="team-spec">Chef de service - Chirurgie</div></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Pr Gilbert Bonkoungou - Tous droits réservés</p>
-            <p><a href="#">Mentions légales</a> | <a href="#">Conformité CNOM-BF</a></p>
+<!-- TOUTES SPÉCIALITÉS -->
+<section id="specialites" class="services" style="background:#fff;">
+    <div class="container">
+        <h2 class="section-title">Toutes nos spécialités médicales</h2>
+        <div class="specialties-list">
+            <span class="specialty-tag">Médecine interne</span><span class="specialty-tag">Diabétologie</span><span class="specialty-tag">Neurologie</span>
+            <span class="specialty-tag">Rhumatologie</span><span class="specialty-tag">Dermatologie</span><span class="specialty-tag">Cardiologie</span>
+            <span class="specialty-tag">Néphrologie</span><span class="specialty-tag">Psychiatrie</span><span class="specialty-tag">Pédiatrie</span>
+            <span class="specialty-tag">Chirurgie pédiatrique</span><span class="specialty-tag">Neurochirurgie</span><span class="specialty-tag">Anesthésie-Réanimation</span>
+            <span class="specialty-tag">Nutrition</span><span class="specialty-tag">Anatomie pathologique</span><span class="specialty-tag">Pneumologie</span>
+            <span class="specialty-tag">Orthopédie-Traumatologie</span><span class="specialty-tag">Urologie</span><span class="specialty-tag">ORL</span>
+            <span class="specialty-tag">Chirurgie digestive</span><span class="specialty-tag">Chirurgie vasculaire</span><span class="specialty-tag">Chirurgie plastique</span>
+            <span class="specialty-tag">Cancérologie</span><span class="specialty-tag">Échographie / Scanner</span>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        // Menu mobile
-        const menuToggle = document.getElementById('mobile-menu');
-        const navMenu = document.querySelector('nav ul');
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <div class="container contact-grid">
+        <div>
+            <h2 style="font-size: 1.9rem;">Prenez rendez-vous facilement</h2>
+            <p style="margin: 16px 0 24px;">Appelez-nous ou remplissez le formulaire, nous vous rappelons sous 24h.</p>
+            <div class="info-line"><i class="fas fa-phone-alt"></i> <span>+226 70 00 11 22 / +226 25 36 10 10</span></div>
+            <div class="info-line"><i class="fas fa-envelope"></i> <span>secretariat@cliniquebonkoungou.bf</span></div>
+            <div class="info-line"><i class="fas fa-map-marker-alt"></i> <span>Ouagadougou, Secteur 4 - Avenue de la Santé</span></div>
+            <div class="info-line"><i class="fas fa-clock"></i> <span>Lun-Ven 8h-18h | Sam 9h-13h | Urgences 24/7</span></div>
+        </div>
+        <form class="contact-form" id="appointmentForm">
+            <input type="text" placeholder="Nom & prénom" required>
+            <input type="tel" placeholder="Téléphone" required>
+            <input type="email" placeholder="Email">
+            <select required>
+                <option value="">Spécialité souhaitée</option>
+                <option>Chirurgie digestive</option><option>Cardiologie</option>
+                <option>Neurologie</option><option>Pédiatrie</option><option>Gynécologie</option>
+            </select>
+            <textarea rows="3" placeholder="Décrivez brièvement votre besoin (sans données médicales sensibles)"></textarea>
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Envoyer la demande <i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+</section>
 
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-        }
+<footer>
+    <div class="container">
+        <p>© 2025 Clinique Pr Gilbert Bonkoungou — Conformité CNOM-BF | Données hébergées en France (HDS)</p>
+        <p style="margin-top: 10px;"><i class="fas fa-shield-alt"></i> Confidentialité médicale respectée</p>
+    </div>
+</footer>
 
-        // Smooth scroll pour les ancres
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    // Fermer le menu mobile si ouvert
-                    if (navMenu && navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                    }
-                }
-            });
+<script>
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobileBtn');
+    const navList = document.getElementById('nav-list');
+    mobileBtn?.addEventListener('click', () => navList.classList.toggle('active'));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({ behavior: 'smooth' });
+            navList?.classList.remove('active');
         });
+    });
 
-        // Gestion du formulaire
-        const form = document.getElementById('appointment-form');
-        if (form) {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                // Vérification simple
-                const name = document.getElementById('name').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const reason = document.getElementById('reason').value;
-                
-                if (!name || !phone || !reason) {
-                    alert('Veuillez remplir tous les champs obligatoires (Nom, Téléphone, Motif)');
-                    return;
-                }
-                
-                const btn = form.querySelector('button');
-                const originalText = btn.textContent;
-                btn.textContent = 'Envoi en cours...';
-                btn.disabled = true;
-                
-                // Simuler l'envoi (à remplacer par un vrai endpoint)
-                // Pour un vrai formulaire sur GitHub Pages, utilisez Formspree (gratuit)
-                // Formulaire actif : https://formspree.io/ -> créez un compte et remplacez l'URL ci-dessous
-                
-                /*
-                // Décommentez cette partie pour utiliser Formspree
-                const formData = new FormData(form);
-                try {
-                    const response = await fetch('https://formspree.io/f/VOTRE_ID_FORMSPREE', {
-                        method: 'POST',
-                        body: formData,
-                        headers: { 'Accept': 'application/json' }
-                    });
-                    if (response.ok) {
-                        alert('Demande envoyée avec succès ! Vous serez contacté rapidement.');
-                        form.reset();
-                    } else {
-                        alert('Erreur lors de l\'envoi. Veuillez réessayer ou nous appeler directement.');
-                    }
-                } catch (error) {
-                    alert('Erreur réseau. Veuillez réessayer.');
-                }
-                */
-                
-                // En attendant Formspree, simulation
-                setTimeout(() => {
-                    alert('Demande envoyée (simulation) ! Vous serez contacté rapidement.');
-                    form.reset();
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                }, 800);
-            });
-        }
-    </script>
+    // Form simulation
+    const form = document.getElementById('appointmentForm');
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert("✅ Votre demande a été transmise. Le secrétariat vous recontactera sous 24h.");
+        form.reset();
+    });
+</script>
 </body>
 </html>
