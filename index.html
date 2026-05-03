@@ -49,6 +49,88 @@
             margin-bottom: 48px;
         }
 
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .animate-fade-left {
+            animation: fadeInLeft 0.6s ease forwards;
+        }
+
+        .animate-fade-right {
+            animation: fadeInRight 0.6s ease forwards;
+        }
+
+        .animate-scale {
+            animation: scaleIn 0.5s ease forwards;
+        }
+
+        /* Délais pour effet cascade */
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+
+        /* Animation au scroll - classe ajoutée par JS */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== FIN ANIMATIONS ========== */
+
         header {
             position: sticky;
             top: 0;
@@ -57,6 +139,12 @@
             z-index: 1000;
             padding: 20px 0;
             border-bottom: 1px solid #f0f0f0;
+            transition: padding 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .header-flex {
@@ -68,11 +156,22 @@
         .logo h2 {
             font-size: 1.6rem;
             font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .logo h2:hover {
+            transform: scale(1.02);
+            letter-spacing: 1px;
         }
 
         .logo span {
             font-weight: 300;
             color: #b8860b;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover span {
+            color: #1a2a3a;
         }
 
         nav ul {
@@ -88,7 +187,23 @@
             letter-spacing: 1px;
             color: #2c2c2c;
             text-transform: uppercase;
-            transition: color 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b8860b;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         nav a:hover {
@@ -99,6 +214,11 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu:hover {
+            transform: rotate(90deg);
         }
 
         .hero {
@@ -121,6 +241,12 @@
             display: flex;
             flex-direction: column;
             height: 580px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .doctor-portrait:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.2);
         }
 
         .doctor-portrait img {
@@ -183,10 +309,20 @@
             font-size: 0.7rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: #b8860b;
+            transform: translateY(-2px);
         }
 
         .badge-gold {
             background: #b8860b;
+        }
+
+        .badge-gold:hover {
+            background: #1a2a3a;
         }
 
         .button-group {
@@ -210,13 +346,31 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            transition: left 0.3s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
         }
 
         .btn-primary:hover {
             background: #b8860b;
+            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -232,7 +386,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             border: 1px solid #1a2a3a;
         }
 
@@ -240,6 +394,7 @@
             background: #1a2a3a;
             color: white;
             border-color: #1a2a3a;
+            transform: translateY(-2px);
         }
 
         .about {
@@ -271,6 +426,12 @@
             padding: 20px;
             border-left: 4px solid #b8860b;
             margin: 24px 0;
+            transition: all 0.3s ease;
+        }
+
+        .about-highlight:hover {
+            background: #fff;
+            transform: translateX(5px);
         }
 
         .signature {
@@ -298,17 +459,24 @@
             padding: 32px 24px;
             text-align: center;
             border: 1px solid #eee6dd;
-            transition: 0.2s;
+            transition: all 0.3s ease;
         }
 
         .expertise-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px -15px rgba(0,0,0,0.1);
+            border-color: #b8860b;
         }
 
         .expertise-card i {
             font-size: 2rem;
             color: #b8860b;
             margin-bottom: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .expertise-card:hover i {
+            transform: scale(1.1);
         }
 
         .expertise-card h4 {
@@ -340,6 +508,13 @@
             padding: 20px;
             background: #fefaf5;
             border-left: 4px solid #b8860b;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
         .timeline-year {
@@ -377,12 +552,24 @@
             padding: 30px;
             text-align: center;
             border: 1px solid #eee6dd;
+            transition: all 0.3s ease;
+        }
+
+        .distinction-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px -15px rgba(0,0,0,0.1);
+            border-color: #b8860b;
         }
 
         .distinction-card i {
             font-size: 2.5rem;
             color: #b8860b;
             margin-bottom: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .distinction-card:hover i {
+            transform: scale(1.15);
         }
 
         .distinction-card h4 {
@@ -408,12 +595,23 @@
             padding: 30px;
             text-align: center;
             border: 1px solid #eee6dd;
+            transition: all 0.3s ease;
+        }
+
+        .hopital-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -10px rgba(0,0,0,0.1);
         }
 
         .hopital-card i {
             font-size: 2rem;
             color: #b8860b;
             margin-bottom: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .hopital-card:hover i {
+            transform: scale(1.1);
         }
 
         .videos {
@@ -434,14 +632,16 @@
             border-radius: 4px;
             overflow: hidden;
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
             display: block;
         }
 
         .video-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.15);
+            border-color: #b8860b;
         }
 
         .video-thumbnail {
@@ -452,6 +652,12 @@
             justify-content: center;
             font-size: 3rem;
             color: #b8860b;
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover .video-thumbnail {
+            background: #b8860b;
+            color: white;
         }
 
         .video-card h4 {
@@ -489,11 +695,22 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info p:hover {
+            transform: translateX(5px);
+            color: #b8860b;
         }
 
         .contact-info i {
             width: 24px;
             color: #b8860b;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info p:hover i {
+            transform: scale(1.2);
         }
 
         .contact-form input,
@@ -507,12 +724,14 @@
             margin-bottom: 24px;
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
             border-bottom-color: #b8860b;
+            transform: translateY(-2px);
         }
 
         footer {
@@ -526,6 +745,11 @@
         footer a {
             color: #b8860b;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
         }
 
         @media (max-width: 900px) {
@@ -618,20 +842,20 @@
 
 <section id="accueil" class="hero">
     <div class="container hero-grid">
-        <div class="doctor-portrait">
+        <div class="doctor-portrait scroll-animate" style="animation-delay: 0s;">
             <img src="https://placehold.co/600x580/e8e0d5/8a7a6a?text=Pr+Gilbert+Bonkoungou&font=playfair" alt="Pr Gilbert Bonkoungou">
             <div class="portrait-caption">Maître de Conférences Agrégé · Pionnier de la Laparoscopie au Burkina</div>
         </div>
         <div class="hero-content">
-            <h4>Maître de Conférences Agrégé · CAMES</h4>
-            <h1>Pr Gilbert Bonkoungou</h1>
-            <p>Chirurgien général, digestif, thoracique et vasculaire. Pionnier de la <strong>chirurgie laparoscopique au Burkina Faso depuis 2005</strong>. Fondateur de la Clinique Wendtoin à Ouagadougou.</p>
-            <div class="badges">
+            <h4 class="scroll-animate delay-1">Maître de Conférences Agrégé · CAMES</h4>
+            <h1 class="scroll-animate delay-2">Pr Gilbert Bonkoungou</h1>
+            <p class="scroll-animate delay-3">Chirurgien général, digestif, thoracique et vasculaire. Pionnier de la <strong>chirurgie laparoscopique au Burkina Faso depuis 2005</strong>. Fondateur de la Clinique Wendtoin à Ouagadougou.</p>
+            <div class="badges scroll-animate delay-4">
                 <span class="badge badge-gold">CAMES 2014</span>
                 <span class="badge">Laparoscopie pionnier</span>
                 <span class="badge">40+ spécialistes</span>
             </div>
-            <div class="button-group">
+            <div class="button-group scroll-animate delay-5">
                 <a href="#contact" class="btn-primary">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
                 <a href="#" class="btn-outline" id="wendtoinBtn"><i class="fas fa-hospital"></i> Clinique Wendtoin</a>
             </div>
@@ -642,41 +866,41 @@
 <section id="a-propos" class="about">
     <div class="container about-grid">
         <div class="about-text">
-            <h3>La chirurgie comme un art</h3>
-            <p><strong>Professeur Gilbert Bonkoungou</strong> est <strong>Maître de Conférences Agrégé en chirurgie générale</strong> à l'Université Joseph Ki-Zerbo de Ouagadougou. Il a été admis au concours d'agrégation du <strong>CAMES en novembre 2014 à Yaoundé, Cameroun</strong>.</p>
-            <p>Formé en Europe et au Burkina, il est <strong>l'un des pionniers de la chirurgie laparoscopique au Burkina Faso depuis 2005</strong>, une technique mini-invasive qui permet une récupération plus rapide pour les patients.</p>
-            <div class="about-highlight">
+            <h3 class="scroll-animate">La chirurgie comme un art</h3>
+            <p class="scroll-animate"><strong>Professeur Gilbert Bonkoungou</strong> est <strong>Maître de Conférences Agrégé en chirurgie générale</strong> à l'Université Joseph Ki-Zerbo de Ouagadougou. Il a été admis au concours d'agrégation du <strong>CAMES en novembre 2014 à Yaoundé, Cameroun</strong>.</p>
+            <p class="scroll-animate">Formé en Europe et au Burkina, il est <strong>l'un des pionniers de la chirurgie laparoscopique au Burkina Faso depuis 2005</strong>, une technique mini-invasive qui permet une récupération plus rapide pour les patients.</p>
+            <div class="about-highlight scroll-animate">
                 <p><strong>🔪 Spécialités :</strong> Chirurgie générale et digestive, Chirurgie laparoscopique, Chirurgie thoracique et vasculaire</p>
             </div>
-            <p>Sa philosophie : chaque patient est unique. La décision chirurgicale se prend ensemble, après un bilan approfondi et une explication claire des bénéfices et des risques. Fondateur de la <strong>Clinique Wendtoin</strong>, il y réunit une équipe pluridisciplinaire de haut niveau.</p>
-            <div class="signature">— Pr Gilbert Bonkoungou</div>
+            <p class="scroll-animate">Sa philosophie : chaque patient est unique. La décision chirurgicale se prend ensemble, après un bilan approfondi et une explication claire des bénéfices et des risques. Fondateur de la <strong>Clinique Wendtoin</strong>, il y réunit une équipe pluridisciplinaire de haut niveau.</p>
+            <div class="signature scroll-animate">— Pr Gilbert Bonkoungou</div>
         </div>
         <div>
-            <img src="https://placehold.co/500x400/f5efe8/8a7a6a?text=Clinique+Wendtoin" style="width:100%; border-radius:4px;" alt="Clinique Wendtoin">
+            <img src="https://placehold.co/500x400/f5efe8/8a7a6a?text=Clinique+Wendtoin" style="width:100%; border-radius:4px;" class="scroll-animate" alt="Clinique Wendtoin">
         </div>
     </div>
 </section>
 
 <section id="parcours" class="parcours">
     <div class="container">
-        <h2 class="section-title">Parcours hospitalier</h2>
-        <div class="section-subtitle">Une carrière au service des patients</div>
+        <h2 class="section-title scroll-animate">Parcours hospitalier</h2>
+        <div class="section-subtitle scroll-animate">Une carrière au service des patients</div>
         <div class="timeline">
-            <div class="timeline-item">
+            <div class="timeline-item scroll-animate">
                 <div class="timeline-year">CHU Yalgado Ouédraogo</div>
                 <div class="timeline-content">
                     <h4>Chef de service - Chirurgie</h4>
                     <p>Responsable du service de chirurgie générale et digestive</p>
                 </div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item scroll-animate">
                 <div class="timeline-year">CHU Blaise Compaoré</div>
                 <div class="timeline-content">
                     <h4>Chirurgien Senior</h4>
                     <p>Prise en charge des patients en chirurgie thoracique et vasculaire</p>
                 </div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item scroll-animate">
                 <div class="timeline-year">Clinique Wendtoin</div>
                 <div class="timeline-content">
                     <h4>Fondateur & Chirurgien</h4>
@@ -689,66 +913,62 @@
 
 <section id="expertise" class="expertise">
     <div class="container">
-        <h2 class="section-title">Domaines d'expertise</h2>
-        <div class="section-subtitle">Chirurgie générale et spécialisée</div>
+        <h2 class="section-title scroll-animate">Domaines d'expertise</h2>
+        <div class="section-subtitle scroll-animate">Chirurgie générale et spécialisée</div>
         <div class="expertise-grid">
-            <div class="expertise-card"><i class="fas fa-stomach"></i><h4>Chirurgie digestive</h4><p>Estomac, foie, voies biliaires, pancréas, intestins</p></div>
-            <div class="expertise-card"><i class="fas fa-microscope"></i><h4>Chirurgie laparoscopique</h4><p>Mini-invasive · Récupération rapide · Pionnier depuis 2005</p></div>
-            <div class="expertise-card"><i class="fas fa-heartbeat"></i><h4>Chirurgie vasculaire</h4><p>Anévrismes, pontages, maladies veineuses</p></div>
-            <div class="expertise-card"><i class="fas fa-lungs"></i><h4>Chirurgie thoracique</h4><p>Poumon, médiastin, plèvre, tumeurs thoraciques</p></div>
+            <div class="expertise-card scroll-animate"><i class="fas fa-stomach"></i><h4>Chirurgie digestive</h4><p>Estomac, foie, voies biliaires, pancréas, intestins</p></div>
+            <div class="expertise-card scroll-animate"><i class="fas fa-microscope"></i><h4>Chirurgie laparoscopique</h4><p>Mini-invasive · Récupération rapide · Pionnier depuis 2005</p></div>
+            <div class="expertise-card scroll-animate"><i class="fas fa-heartbeat"></i><h4>Chirurgie vasculaire</h4><p>Anévrismes, pontages, maladies veineuses</p></div>
+            <div class="expertise-card scroll-animate"><i class="fas fa-lungs"></i><h4>Chirurgie thoracique</h4><p>Poumon, médiastin, plèvre, tumeurs thoraciques</p></div>
         </div>
     </div>
 </section>
 
 <section id="distinctions" class="distinctions">
     <div class="container">
-        <h2 class="section-title">Distinctions & Reconnaissances</h2>
-        <div class="section-subtitle">Un parcours d'excellence</div>
+        <h2 class="section-title scroll-animate">Distinctions & Reconnaissances</h2>
+        <div class="section-subtitle scroll-animate">Un parcours d'excellence</div>
         <div class="distinctions-grid">
-            <div class="distinction-card"><i class="fas fa-medal"></i><h4>Agrégation du CAMES</h4><p>Admis au concours d'agrégation du CAMES en novembre 2014 à Yaoundé, Cameroun</p></div>
-            <div class="distinction-card"><i class="fas fa-award"></i><h4>Pionnier de la Laparoscopie</h4><p>Premières interventions chirurgicales vidéo-assistées réalisées en 2005</p></div>
-            <div class="distinction-card"><i class="fas fa-chalkboard-user"></i><h4>Maître de Conférences</h4><p>Enseignant à l'Université Joseph Ki-Zerbo de Ouagadougou</p></div>
+            <div class="distinction-card scroll-animate"><i class="fas fa-medal"></i><h4>Agrégation du CAMES</h4><p>Admis au concours d'agrégation du CAMES en novembre 2014 à Yaoundé, Cameroun</p></div>
+            <div class="distinction-card scroll-animate"><i class="fas fa-award"></i><h4>Pionnier de la Laparoscopie</h4><p>Premières interventions chirurgicales vidéo-assistées réalisées en 2005</p></div>
+            <div class="distinction-card scroll-animate"><i class="fas fa-chalkboard-user"></i><h4>Maître de Conférences</h4><p>Enseignant à l'Université Joseph Ki-Zerbo de Ouagadougou</p></div>
         </div>
     </div>
 </section>
 
 <section class="hopitaux">
     <div class="container">
-        <h2 class="section-title">Lieux d'exercice</h2>
-        <div class="section-subtitle">Une expertise reconnue dans plusieurs établissements</div>
+        <h2 class="section-title scroll-animate">Lieux d'exercice</h2>
+        <div class="section-subtitle scroll-animate">Une expertise reconnue dans plusieurs établissements</div>
         <div class="hopitaux-grid">
-            <div class="hopital-card"><i class="fas fa-hospital"></i><h4>CHU Yalgado Ouédraogo</h4><p>Ouagadougou</p></div>
-            <div class="hopital-card"><i class="fas fa-hospital"></i><h4>CHU Blaise Compaoré</h4><p>Ouagadougou</p></div>
-            <div class="hopital-card"><i class="fas fa-clinic-medical"></i><h4>Clinique Wendtoin</h4><p>Fondateur & Chirurgien</p></div>
+            <div class="hopital-card scroll-animate"><i class="fas fa-hospital"></i><h4>CHU Yalgado Ouédraogo</h4><p>Ouagadougou</p></div>
+            <div class="hopital-card scroll-animate"><i class="fas fa-hospital"></i><h4>CHU Blaise Compaoré</h4><p>Ouagadougou</p></div>
+            <div class="hopital-card scroll-animate"><i class="fas fa-clinic-medical"></i><h4>Clinique Wendtoin</h4><p>Fondateur & Chirurgien</p></div>
         </div>
     </div>
 </section>
 
 <section id="videos" class="videos">
     <div class="container">
-        <h2 class="section-title">Le Pr Bonkoungou en vidéo & dans la presse</h2>
-        <div class="section-subtitle">Découvrez ses interventions, conférences et interviews</div>
+        <h2 class="section-title scroll-animate">Le Pr Bonkoungou en vidéo & dans la presse</h2>
+        <div class="section-subtitle scroll-animate">Découvrez ses interventions, conférences et interviews</div>
         <div class="videos-grid">
-            <!-- Vidéo 1 -->
-            <div class="video-card" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <div class="video-card scroll-animate" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
                 <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
                 <h4>La chirurgie laparoscopique au Burkina</h4>
                 <p>Interview : les avantages de la chirurgie mini-invasive, pionnier depuis 2005.</p>
             </div>
-            <!-- Vidéo 2 -->
-            <div class="video-card" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <div class="video-card scroll-animate" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
                 <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
                 <h4>Prise en charge des cancers digestifs</h4>
                 <p>Conférence sur l'approche multidisciplinaire au Burkina Faso.</p>
             </div>
-            <!-- Vidéo 3 -->
-            <div class="video-card" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+            <div class="video-card scroll-animate" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
                 <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
                 <h4>Présentation de la Clinique Wendtoin</h4>
                 <p>Découvrez l'établissement fondé par le Pr Bonkoungou.</p>
             </div>
-            <!-- NOUVEAU : Article / Interview Lefaso.net -->
-            <a href="https://lefaso.net/spip.php?article143733" target="_blank" rel="noopener noreferrer" class="video-card" style="text-decoration: none; color: inherit;">
+            <a href="https://lefaso.net/spip.php?article143733" target="_blank" rel="noopener noreferrer" class="video-card scroll-animate" style="text-decoration: none; color: inherit;">
                 <div class="video-thumbnail" style="background: #1a2a3a;">
                     <i class="fas fa-newspaper" style="color: white; font-size: 2.5rem;"></i>
                 </div>
@@ -763,21 +983,21 @@
 <section id="contact" class="contact">
     <div class="container contact-grid">
         <div>
-            <h2 class="section-title" style="margin-bottom: 24px;">Consultation</h2>
+            <h2 class="section-title scroll-animate" style="margin-bottom: 24px;">Consultation</h2>
             <div class="contact-info">
-                <p><i class="fas fa-phone-alt"></i> +226 51 00 06 47 (Urgences 24/24)</p>
-                <p><i class="fas fa-phone"></i> +226 78 36 56 57 (Standard)</p>
-                <p><i class="fab fa-whatsapp"></i> +226 51 00 06 47 (WhatsApp)</p>
-                <p><i class="fas fa-envelope"></i> clinwend@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Boulevard des Tensoba, Secteur n°25<br>Cissin, Ouagadougou, Burkina Faso</p>
-                <p><i class="fas fa-clock"></i> Consultations : Lun-Ven 7h30–19h30 | Sam 7h30–12h<br>🚨 Urgences 24h/24 - 7j/7</p>
+                <p class="scroll-animate"><i class="fas fa-phone-alt"></i> +226 51 00 06 47 (Urgences 24/24)</p>
+                <p class="scroll-animate"><i class="fas fa-phone"></i> +226 78 36 56 57 (Standard)</p>
+                <p class="scroll-animate"><i class="fab fa-whatsapp"></i> +226 51 00 06 47 (WhatsApp)</p>
+                <p class="scroll-animate"><i class="fas fa-envelope"></i> clinwend@gmail.com</p>
+                <p class="scroll-animate"><i class="fas fa-map-marker-alt"></i> Boulevard des Tensoba, Secteur n°25<br>Cissin, Ouagadougou, Burkina Faso</p>
+                <p class="scroll-animate"><i class="fas fa-clock"></i> Consultations : Lun-Ven 7h30–19h30 | Sam 7h30–12h<br>🚨 Urgences 24h/24 - 7j/7</p>
             </div>
         </div>
         <form id="appointmentForm" class="contact-form">
-            <input type="text" placeholder="Nom complet" required>
-            <input type="tel" placeholder="Téléphone" required>
-            <input type="email" placeholder="Email">
-            <select required>
+            <input type="text" class="scroll-animate" placeholder="Nom complet" required>
+            <input type="tel" class="scroll-animate" placeholder="Téléphone" required>
+            <input type="email" class="scroll-animate" placeholder="Email">
+            <select class="scroll-animate" required>
                 <option value="">Motif de consultation</option>
                 <option>Chirurgie digestive</option>
                 <option>Chirurgie laparoscopique</option>
@@ -786,8 +1006,8 @@
                 <option>Consultation générale</option>
                 <option>Autre</option>
             </select>
-            <textarea rows="3" placeholder="Votre message..."></textarea>
-            <button type="submit" class="btn-primary" style="background:#b8860b;">Envoyer la demande <i class="fas fa-paper-plane"></i></button>
+            <textarea class="scroll-animate" rows="3" placeholder="Votre message..."></textarea>
+            <button type="submit" class="btn-primary scroll-animate" style="background:#b8860b;">Envoyer la demande <i class="fas fa-paper-plane"></i></button>
         </form>
     </div>
 </section>
@@ -807,12 +1027,14 @@
 </div>
 
 <script>
+    // Menu mobile
     const mobileBtn = document.getElementById('mobileBtn');
     const navList = document.getElementById('nav-list');
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => navList.classList.toggle('active'));
     }
 
+    // Navigation smooth
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -822,6 +1044,29 @@
         });
     });
 
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Animation au scroll (Intersection Observer)
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    animateElements.forEach(el => observer.observe(el));
+
+    // Bouton Clinique Wendtoin
     const wendtoinBtn = document.getElementById('wendtoinBtn');
     if (wendtoinBtn) {
         wendtoinBtn.addEventListener('click', (e) => {
@@ -830,6 +1075,7 @@
         });
     }
 
+    // Formulaire de contact
     const form = document.getElementById('appointmentForm');
     form?.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -837,6 +1083,7 @@
         form.reset();
     });
 
+    // Vidéo modal
     let videoModal = document.getElementById('videoModal');
     let videoIframe = document.getElementById('videoIframe');
 
