@@ -80,7 +80,7 @@
 
         .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
 
-        /* HERO : PHOTO À GAUCHE, TEXTE À DROITE */
+        /* HERO : PHOTO À GAUCHE, TEXTE À DROITE - MÊME HAUTEUR */
         .hero {
             padding: 80px 0 100px;
             background: #fefaf5;
@@ -90,7 +90,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: stretch; /* Force les deux colonnes à la même hauteur */
         }
 
         .doctor-portrait {
@@ -98,6 +98,9 @@
             border-radius: 4px;
             overflow: hidden;
             box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Prend toute la hauteur de la grille */
         }
 
         .doctor-portrait img {
@@ -105,7 +108,8 @@
             height: auto;
             display: block;
             object-fit: cover;
-            aspect-ratio: 3 / 4;
+            flex: 1; /* L'image prend tout l'espace disponible */
+            min-height: 0;
         }
 
         .portrait-caption {
@@ -114,6 +118,14 @@
             color: #8a8a8a;
             letter-spacing: 0.5px;
             text-align: center;
+            background: #e8e0d5;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%; /* Alignement vertical parfait */
         }
 
         .hero-content h4 {
@@ -184,8 +196,10 @@
 
         .button-group {
             display: flex;
+            flex-direction: row;     /* FORCÉ EN ROW SUR DESKTOP */
             gap: 16px;
             flex-wrap: wrap;
+            align-items: center;
         }
 
         /* AUTRES SECTIONS */
@@ -236,8 +250,22 @@
 
         footer { padding: 48px 0; text-align: center; background: #fefaf5; border-top: 1px solid #f0f0f0; font-size: 0.75rem; color: #8a8a8a; }
 
+        /* RESPONSIVE MOBILE */
         @media (max-width: 900px) {
             .hero-grid, .about-grid, .contact-grid, .expertise-grid, .videos-grid { grid-template-columns: 1fr; }
+            
+            /* Sur mobile, les boutons repassent en colonne (plus confortable) */
+            .button-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .button-group .btn-primary,
+            .button-group .btn-outline {
+                text-align: center;
+                justify-content: center;
+            }
+            
             nav ul {
                 display: none;
                 flex-direction: column;
@@ -255,7 +283,6 @@
             nav ul.active { display: flex; }
             .hero-content h1 { font-size: 2.5rem; }
             .container { padding: 0 24px; }
-            .button-group { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -278,7 +305,7 @@
     </div>
 </header>
 
-<!-- HERO : PHOTO À GAUCHE (confiance immédiate) - TEXTE À DROITE -->
+<!-- HERO : MÊME HAUTEUR PHOTO/TEXTE & BOUTONS EN ROW -->
 <section id="accueil" class="hero">
     <div class="container hero-grid">
         <div class="doctor-portrait">
