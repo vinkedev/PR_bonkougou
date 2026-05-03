@@ -49,7 +49,6 @@
             margin-bottom: 48px;
         }
 
-        /* HEADER */
         header {
             position: sticky;
             top: 0;
@@ -102,7 +101,6 @@
             cursor: pointer;
         }
 
-        /* HERO */
         .hero {
             padding: 80px 0 100px;
             background: #fefaf5;
@@ -244,7 +242,6 @@
             border-color: #1a2a3a;
         }
 
-        /* ABOUT */
         .about {
             padding: 90px 0;
             background: white;
@@ -284,7 +281,6 @@
             color: #b8860b;
         }
 
-        /* EXPERTISE */
         .expertise {
             background: #fefaf5;
             padding: 90px 0;
@@ -326,7 +322,6 @@
             color: #6a6a6a;
         }
 
-        /* PARCOURS */
         .parcours {
             padding: 90px 0;
             background: white;
@@ -365,7 +360,6 @@
             font-size: 0.9rem;
         }
 
-        /* DISTINCTIONS */
         .distinctions {
             background: #fefaf5;
             padding: 90px 0;
@@ -397,7 +391,6 @@
             margin-bottom: 8px;
         }
 
-        /* HOPITAUX */
         .hopitaux {
             padding: 90px 0;
             background: white;
@@ -423,7 +416,6 @@
             margin-bottom: 16px;
         }
 
-        /* VIDEOS */
         .videos {
             padding: 90px 0;
             background: #fefaf5;
@@ -471,53 +463,6 @@
             font-size: 0.85rem;
         }
 
-        /* TEAM */
-        .team {
-            padding: 90px 0;
-            background: white;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .team-card {
-            text-align: center;
-            background: #fefaf5;
-            padding: 24px;
-            border-radius: 4px;
-        }
-
-        .team-avatar {
-            width: 90px;
-            height: 90px;
-            background: #e8e0d5;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: #8a7a6a;
-        }
-
-        .team-card h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-        }
-
-        .team-spec {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #b8860b;
-            margin-top: 6px;
-        }
-
-        /* CONTACT */
         .contact {
             background: #fefaf5;
             padding: 90px 0;
@@ -573,7 +518,6 @@
             text-decoration: none;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 900px) {
             .hero-grid,
             .about-grid,
@@ -662,7 +606,6 @@
     </div>
 </header>
 
-<!-- HERO -->
 <section id="accueil" class="hero">
     <div class="container hero-grid">
         <div class="doctor-portrait">
@@ -686,7 +629,6 @@
     </div>
 </section>
 
-<!-- À PROPOS -->
 <section id="a-propos" class="about">
     <div class="container about-grid">
         <div class="about-text">
@@ -705,7 +647,6 @@
     </div>
 </section>
 
-<!-- PARCOURS HOSPITALIER -->
 <section id="parcours" class="parcours">
     <div class="container">
         <h2 class="section-title">Parcours hospitalier</h2>
@@ -726,13 +667,6 @@
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-year">CHU de Tengandgo</div>
-                <div class="timeline-content">
-                    <h4>Chirurgien Consultant</h4>
-                    <p>Expertise en chirurgie laparoscopique et digestive</p>
-                </div>
-            </div>
-            <div class="timeline-item">
                 <div class="timeline-year">Clinique Wendtoin</div>
                 <div class="timeline-content">
                     <h4>Fondateur & Chirurgien</h4>
@@ -743,7 +677,6 @@
     </div>
 </section>
 
-<!-- EXPERTISE -->
 <section id="expertise" class="expertise">
     <div class="container">
         <h2 class="section-title">Domaines d'expertise</h2>
@@ -757,7 +690,6 @@
     </div>
 </section>
 
-<!-- DISTINCTIONS -->
 <section id="distinctions" class="distinctions">
     <div class="container">
         <h2 class="section-title">Distinctions & Reconnaissances</h2>
@@ -770,7 +702,6 @@
     </div>
 </section>
 
-<!-- HOPITAUX D'EXERCICE -->
 <section class="hopitaux">
     <div class="container">
         <h2 class="section-title">Lieux d'exercice</h2>
@@ -778,13 +709,11 @@
         <div class="hopitaux-grid">
             <div class="hopital-card"><i class="fas fa-hospital"></i><h4>CHU Yalgado Ouédraogo</h4><p>Ouagadougou</p></div>
             <div class="hopital-card"><i class="fas fa-hospital"></i><h4>CHU Blaise Compaoré</h4><p>Ouagadougou</p></div>
-            <div class="hopital-card"><i class="fas fa-hospital"></i><h4>CHU de Tengandgo</h4><p>Ouagadougou</p></div>
             <div class="hopital-card"><i class="fas fa-clinic-medical"></i><h4>Clinique Wendtoin</h4><p>Fondateur & Chirurgien</p></div>
         </div>
     </div>
 </section>
 
-<!-- VIDÉOS -->
 <section id="videos" class="videos">
     <div class="container">
         <h2 class="section-title">Le Pr Bonkoungou en vidéo</h2>
@@ -809,7 +738,6 @@
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
     <div class="container contact-grid">
         <div>
@@ -849,7 +777,6 @@
     </div>
 </footer>
 
-<!-- MODAL VIDÉO -->
 <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center;">
     <div style="position:relative; width:90%; max-width:800px;">
         <button onclick="closeVideo()" style="position:absolute; top:-40px; right:0; background:white; border:none; font-size:24px; cursor:pointer; padding:8px 16px;">✕</button>
