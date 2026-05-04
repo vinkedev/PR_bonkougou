@@ -231,6 +231,7 @@
             align-items: stretch;
         }
 
+        /* ========== STYLES POUR L'IMAGE SUR MOBILE : OCCUPE L'ESPACE ========== */
         .doctor-portrait {
             background: #e8e0d5;
             border-radius: 4px;
@@ -247,11 +248,28 @@
             box-shadow: 0 30px 50px -20px rgba(0,0,0,0.2);
         }
 
+        /* Conteneur image : occupe tout l'espace disponible */
+        .doctor-portrait .img-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #e8e0d5;
+            min-height: 0; /* important pour flex en colonne */
+        }
+
         .doctor-portrait img {
             width: 100%;
             height: 100%;
             display: block;
             object-fit: cover;
+            object-position: center top; /* garde le visage bien cadré */
+            transition: transform 0.4s ease;
+        }
+
+        .doctor-portrait:hover img {
+            transform: scale(1.02);
         }
 
         .portrait-caption {
@@ -750,6 +768,7 @@
             color: white;
         }
 
+        /* ========== RESPONSIVE : IMAGE PLEINE LARGEUR ET HAUTEUR ADAPTÉE ========== */
         @media (max-width: 900px) {
             .hero-grid,
             .about-grid,
@@ -761,9 +780,27 @@
                 grid-template-columns: 1fr;
             }
 
-            .doctor-portrait,
+            /* Image dans hero : occupe tout l'espace horizontal et bon cadrage */
+            .doctor-portrait {
+                height: auto;  /* la hauteur s'adapte au contenu */
+                max-height: 520px; /* limite élégante sur mobile */
+            }
+
+            .doctor-portrait .img-wrapper {
+                min-height: 280px;
+                width: 100%;
+            }
+
+            .doctor-portrait img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center 20%; /* recadre pour garder le visage en évidence */
+            }
+
             .hero-content {
                 height: auto;
+                margin-top: 24px;
             }
 
             .button-group {
@@ -812,6 +849,19 @@
                 gap: 8px;
             }
         }
+
+        /* petits écrans très étroits (moins de 480px) pour encore plus de contrôle */
+        @media (max-width: 480px) {
+            .doctor-portrait {
+                max-height: 460px;
+            }
+            .doctor-portrait .img-wrapper {
+                min-height: 260px;
+            }
+            .doctor-portrait img {
+                object-position: center 15%; /* ajuste pour que le visage soit bien visible */
+            }
+        }
     </style>
 </head>
 <body>
@@ -840,9 +890,11 @@
 
 <section id="accueil" class="hero">
     <div class="container hero-grid">
-        <!-- PHOTO DU PR GILBERT - dossier pr_gilbert -->
+        <!-- PHOTO DU PR GILBERT - dossier pr_gilbert avec structure améliorée pour que l'image occupe bien l'espace sur mobile -->
         <div class="doctor-portrait scroll-animate" style="animation-delay: 0s;">
-            <img src="pr_gilbert/pr.jpg" alt="Pr Gilbert Bonkoungou - Chirurgien">
+            <div class="img-wrapper">
+                <img src="pr_gilbert/pr.jpg" alt="Pr Gilbert Bonkoungou - Chirurgien, pionnier de la laparoscopie">
+            </div>
             <div class="portrait-caption">Pr Agrégé de Chirurgie Générale · Pionnier de la Laparoscopie au Burkina</div>
         </div>
         <div class="hero-content">
@@ -875,7 +927,7 @@
             <div class="signature scroll-animate">— Pr Gilbert Bonkoungou</div>
         </div>
         <div>
-            <!-- PHOTO DE LA CLINIQUE WENDTOIN - dossier pr_gilbert -->
+            <!-- PHOTO CLINIQUE WENDTOIN -->
             <img src="pr_gilbert/vue_wendtoin.jpg" alt="Clinique Wendtoin" style="width:100%; border-radius:4px;" class="scroll-animate">
         </div>
     </div>
