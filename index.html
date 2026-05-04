@@ -537,7 +537,7 @@
             font-weight: 700;
             font-size: 1.2rem;
             color: #b8860b;
-            min-width: 100px;
+            min-width: 180px;
         }
 
         .timeline-content h4 {
@@ -848,6 +848,10 @@
                 flex-direction: column;
                 gap: 8px;
             }
+            
+            .timeline-year {
+                min-width: auto;
+            }
         }
 
         /* petits écrans très étroits (moins de 480px) pour encore plus de contrôle */
@@ -890,10 +894,10 @@
 
 <section id="accueil" class="hero">
     <div class="container hero-grid">
-        <!-- PHOTO DU PR GILBERT - dossier pr_gilbert avec structure améliorée pour que l'image occupe bien l'espace sur mobile -->
+        <!-- PHOTO DU PR GILBERT - utilisation de image_pr.jpeg -->
         <div class="doctor-portrait scroll-animate" style="animation-delay: 0s;">
             <div class="img-wrapper">
-                <img src="pr_gilbert/pr.jpg" alt="Pr Gilbert Bonkoungou - Chirurgien, pionnier de la laparoscopie">
+                <img src="pr_gilbert/image_pr.jpeg" alt="Pr Gilbert Bonkoungou - Chirurgien, pionnier de la laparoscopie">
             </div>
             <div class="portrait-caption">Pr Agrégé de Chirurgie Générale · Pionnier de la Laparoscopie au Burkina</div>
         </div>
@@ -941,8 +945,8 @@
             <div class="timeline-item scroll-animate">
                 <div class="timeline-year">CHU Yalgado Ouédraogo</div>
                 <div class="timeline-content">
-                    <h4>Chef de service - Chirurgie</h4>
-                    <p>Responsable du service de chirurgie générale et digestive</p>
+                    <h4>Assistant - Chirurgie</h4>
+                    <p>Assistant au service de chirurgie générale et digestive</p>
                 </div>
             </div>
             <div class="timeline-item scroll-animate">
@@ -993,8 +997,8 @@
         <h2 class="section-title scroll-animate">Lieux d'exercice</h2>
         <div class="section-subtitle scroll-animate">Une expertise reconnue dans plusieurs établissements</div>
         <div class="hopitaux-grid">
-            <div class="hopital-card scroll-animate"><i class="fas fa-hospital"></i><h4>CHU Yalgado Ouédraogo</h4><p>Ouagadougou</p></div>
-            <div class="hopital-card scroll-animate"><i class="fas fa-hospital"></i><h4>CHU Blaise Compaoré</h4><p>Ouagadougou</p></div>
+            <div class="hopital-card scroll-animate"><i class="fas fa-hospital"></i><h4>CHU Yalgado Ouédraogo</h4><p>Ouagadougou · Assistant</p></div>
+            <div class="hopital-card scroll-animate"><i class="fas fa-hospital"></i><h4>CHU Blaise Compaoré</h4><p>Ouagadougou · Chirurgien Senior</p></div>
             <div class="hopital-card scroll-animate"><i class="fas fa-clinic-medical"></i><h4>Clinique Wendtoin</h4><p>Fondateur & Chirurgien</p></div>
         </div>
     </div>
