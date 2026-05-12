@@ -231,7 +231,6 @@
             align-items: stretch;
         }
 
-        /* ========== STYLES POUR L'IMAGE SUR MOBILE : OCCUPE L'ESPACE ========== */
         .doctor-portrait {
             background: #e8e0d5;
             border-radius: 4px;
@@ -687,13 +686,6 @@
             font-size: 0.85rem;
         }
 
-        .article-link {
-            font-size: 0.7rem;
-            color: #b8860b;
-            padding: 0 20px 20px;
-            display: block;
-        }
-
         .contact {
             background: #fefaf5;
             padding: 90px 0;
@@ -907,7 +899,6 @@
             </div>
             <div class="button-group scroll-animate delay-5">
                 <a href="#contact" class="btn-primary">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
-                <!-- LIEN MIS À JOUR VERS LA CLINIQUE WENDTOIN -->
                 <a href="https://vinkedev.github.io/clinique-wendtoin/" target="_blank" rel="noopener noreferrer" class="btn-outline" id="wendtoinBtn">
                     <i class="fas fa-hospital"></i> Clinique Wendtoin
                 </a>
@@ -1006,28 +997,39 @@
         <h2 class="section-title scroll-animate">Le Pr Bonkoungou en vidéo & dans la presse</h2>
         <div class="section-subtitle scroll-animate">Découvrez ses interventions, conférences et interviews</div>
         <div class="videos-grid">
-            <div class="video-card scroll-animate" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
-                <h4>La chirurgie laparoscopique au Burkina</h4>
-                <p>Interview : les avantages de la chirurgie mini-invasive, pionnier depuis 2005.</p>
-            </div>
-            <div class="video-card scroll-animate" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
-                <h4>Prise en charge des cancers digestifs</h4>
-                <p>Conférence sur l'approche multidisciplinaire au Burkina Faso.</p>
-            </div>
-            <div class="video-card scroll-animate" onclick="playVideo('https://www.youtube.com/embed/dQw4w9WgXcQ')">
-                <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
-                <h4>Présentation de la Clinique Wendtoin</h4>
-                <p>Découvrez l'établissement fondé par le Pr Bonkoungou.</p>
-            </div>
-            <a href="https://lefaso.net/spip.php?article143733" target="_blank" rel="noopener noreferrer" class="video-card scroll-animate" style="text-decoration: none; color: inherit;">
-                <div class="video-thumbnail" style="background: #1a2a3a;">
-                    <i class="fas fa-newspaper" style="color: white; font-size: 2.5rem;"></i>
-                </div>
-                <h4>Interview : Chirurgie laparoscopique</h4>
-                <p>« Ce n'est pas une technique futuriste, c'est l'actualité » - Propos recueillis par Lefaso.net</p>
-                <span class="article-link">📰 Lire l'article complet →</span>
+            <!-- VIDÉO 1 : Maladie hémorroïdaire -->
+            <a href="https://web.facebook.com/reel/645204957720787" target="_blank" rel="noopener noreferrer" class="video-card scroll-animate">
+                <div class="video-thumbnail"><i class="fab fa-facebook"></i></div>
+                <h4>Pr Gilbert BONKOUGOU - Maladie hémorroïdaire</h4>
+                <p>Les hémorroïdes expliquées par le Pr Gilbert BONKOUGOU</p>
+            </a>
+
+            <!-- VIDÉO 2 : Varices des membres inférieurs (première) -->
+            <a href="https://web.facebook.com/reel/1634296984276574" target="_blank" rel="noopener noreferrer" class="video-card scroll-animate">
+                <div class="video-thumbnail"><i class="fab fa-facebook"></i></div>
+                <h4>Pr Gilbert BONKOUGOU - Varices des membres inférieurs (1)</h4>
+                <p>Prise en charge des varices par le Pr Gilbert BONKOUGOU</p>
+            </a>
+
+            <!-- VIDÉO 3 : Varices des membres inférieurs (deuxième - nouveau lien) -->
+            <a href="https://web.facebook.com/reel/953192637302228" target="_blank" rel="noopener noreferrer" class="video-card scroll-animate">
+                <div class="video-thumbnail"><i class="fab fa-facebook"></i></div>
+                <h4>Pr Gilbert BONKOUGOU - Varices des membres inférieurs (2)</h4>
+                <p>Prise en charge des varices par le Pr Gilbert BONKOUGOU</p>
+            </a>
+
+            <!-- VIDÉO 4 : Gynécomastie -->
+            <a href="https://web.facebook.com/reel/2986569131572491" target="_blank" rel="noopener noreferrer" class="video-card scroll-animate">
+                <div class="video-thumbnail"><i class="fab fa-facebook"></i></div>
+                <h4>Pr Gilbert BONKOUGOU - Gynécomastie</h4>
+                <p>Un homme qui "pousse des seins" ? Cela intrigue, inquiète, fait peur. C'est une gynécomastie</p>
+            </a>
+
+            <!-- VIDÉO 5 : Hypertrophie mammaire (forte poitrine) -->
+            <a href="https://web.facebook.com/reel/1879660532188010" target="_blank" rel="noopener noreferrer" class="video-card scroll-animate">
+                <div class="video-thumbnail"><i class="fab fa-facebook"></i></div>
+                <h4>Pr Gilbert BONKOUGOU - Hypertrophie mammaire</h4>
+                <p>L'hypertrophie des seins (forte poitrine) : en dehors du caractère inesthétique, peut causer des douleurs des épaules et du dos</p>
             </a>
         </div>
     </div>
@@ -1072,13 +1074,6 @@
     </div>
 </footer>
 
-<div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center;">
-    <div style="position:relative; width:90%; max-width:800px;">
-        <button onclick="closeVideo()" style="position:absolute; top:-40px; right:0; background:white; border:none; font-size:24px; cursor:pointer; padding:8px 16px;">✕</button>
-        <iframe id="videoIframe" width="100%" height="450px" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
 <script>
     const mobileBtn = document.getElementById('mobileBtn');
     const navList = document.getElementById('nav-list');
@@ -1121,22 +1116,6 @@
         alert("✅ Demande envoyée. Vous serez contacté sous 24h.");
         form.reset();
     });
-
-    let videoModal = document.getElementById('videoModal');
-    let videoIframe = document.getElementById('videoIframe');
-
-    function playVideo(url) {
-        videoIframe.src = url;
-        videoModal.style.display = 'flex';
-    }
-
-    function closeVideo() {
-        videoIframe.src = '';
-        videoModal.style.display = 'none';
-    }
-
-    window.playVideo = playVideo;
-    window.closeVideo = closeVideo;
 </script>
 </body>
 </html>
